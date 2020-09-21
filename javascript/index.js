@@ -1,5 +1,6 @@
 var divsArray = [],
     divsHeight = [],
+    runButton2 = document.getElementById("insSort")
     runButton1 = document.getElementById("selSort"),
     runButton = document.getElementById("start"),
     generateArrayButton = document.getElementById("array-gen"),
@@ -24,8 +25,12 @@ function createArray() {
   }
 }
 var time = 0; 
+var count = 0;
 function transformDiv(div, divHeight) {
+  count++
   window.setTimeout(() => {
+    console.log(div)
+    console.log(count)
     div.style= "width:" + divWidthAsPercentage + "%; height:" + divHeight + "%;";
   }, time+=25)
   
@@ -65,10 +70,37 @@ function selectionSort() {
 }
 
 
+function bubbleSort() {
+  for (let i = 0; i < arraySize; i++) {
+    for (let j = i + 1; j < arraySize +1; j++) {
+      if (divsHeight[i] > divsHeight[j]) {
+        let temp = divsHeight[i];
+        divsHeight[i] = divsHeight[j];
+        divsHeight[j] = temp;
+        transformDiv(divsArray[i], divsHeight[i]);
+        transformDiv(divsArray[j], divsHeight[j]);
+      }
+    }
+  }
+}
+
+function insertionSort() {
+  for (let i = 1; i < arraySize; i++) {
+    let j = i - 1
+    let temp = divsHeight[i]
+    while (temp < divsHeight[j] && j >= 0) {
+      divsHeight[j + 1] = divsHeight[j]
+      transformDiv(divsArray[j + 1], divsHeight[j + 1]);
+      j--
+    }
+    divsHeight[j + 1] = temp 
+    transformDiv(divsArray[j + 1], divsHeight[j + 1]);
+  }
+}
+
 
 generateArrayButton.addEventListener("click", createArray);
 runButton.addEventListener("click", bubbleSort);
 runButton1.addEventListener("click", selectionSort);
-
-
+runButton2.addEventListener("click", insertionSort);
 
