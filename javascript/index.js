@@ -1,0 +1,47 @@
+var divsArray = [],
+    divsHeight = [],
+    runButton = document.getElementById("start"),
+    generateArrayButton = document.getElementById("array-gen"),
+    algoContainer = document.getElementById("algo-container"),
+    arraySize = 50,
+    divWidthAsPercentage = 100 / arraySize;
+
+
+
+function createArray() {
+  // clear the container of any divs currently in it;
+  algoContainer.innerHTML="";
+  // Enter for loop that creates all the divs for the array, and there corresponding sizes:
+  for (let i = 0, randSize; i < arraySize; i++) {
+    // rand number between 20 and 100;
+    randSize = Math.floor(Math.random() * 100 * 0.8) + 20;
+    divsHeight[i] = randSize;
+    divsArray[i] = document.createElement("div");
+    divsArray[i].classList.add('divBar');
+    algoContainer.appendChild(divsArray[i]);
+    divsArray[i].style = "width:" + divWidthAsPercentage + "%; height:" + divsHeight[i] + "%;";
+  }
+}
+
+function transformDiv(div, divHeight) {
+  window.setTimeout(() => {
+    div.style= "width:" + divWidthAsPercentage + "%; height:" + divHeight + "%;";
+  }, 1000)
+}
+
+function bubbleSort() {
+  for (let i = 0; i < arraySize; i++) {
+    for (let j = i + 1; j < arraySize +1; j++) {
+      if (divsHeight[i] > divsHeight[j]) {
+        let temp = divsHeight[i];
+        divsHeight[i] = divsHeight[j];
+        divsHeight[j] = temp;
+        transformDiv(divsArray[i], divsHeight[i]);
+        transformDiv(divsArray[j], divsHeight[j]);
+      }
+    }
+  }
+}
+
+generateArrayButton.addEventListener("click", createArray);
+runButton.addEventListener("click", bubbleSort);
