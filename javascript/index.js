@@ -51,20 +51,19 @@ function bubbleSort() {
 }
 
 function selectionSort() {
-  for (let i=0; i < arraySize; i++) {
-    let indexOfSmallest = i;
-    for (let j= i + 1; j < arraySize; j++) {
-      if (divsHeight[j] < divsHeight[indexOfSmallest]) {
-        indexOfSmallest = j;
+  for (let i = 0; i < arraySize; i++) {
+    let min = i;
+    for (let j = i + 1; j < arraySize; j++) {
+      if (divsHeight[j] < divsHeight[min]) {
+        min = j;
       }
     }
-
-    if (indexOfSmallest !== i) {
+    if (min !== i) {
       let temp = divsHeight[i];
-      divsHeight[i] = divsHeight[indexOfSmallest];
-      divsHeight[indexOfSmallest] = temp;
+      divsHeight[i] = divsHeight[min];
+      divsHeight[min] = temp;
       transformDiv(divsArray[i], divsHeight[i]);
-      transformDiv(divsArray[indexOfSmallest], divsHeight[indexOfSmallest]);
+      transformDiv(divsArray[min], divsHeight[min]);
     }
   }
 }
