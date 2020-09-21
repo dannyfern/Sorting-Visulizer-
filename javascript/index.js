@@ -1,10 +1,13 @@
 var divsArray = [],
     divsHeight = [],
     runButton = document.getElementById("start"),
+    runSelectionSort = document.getElementById("selection-sort"),
+    runQuickSort = document.getElementById("quick-sort"),
     generateArrayButton = document.getElementById("array-gen"),
     algoContainer = document.getElementById("algo-container"),
     arraySize = 50,
-    divWidthAsPercentage = 100 / arraySize;
+    divWidthAsPercentage = 100 / arraySize,
+    time = 0;
 
 
 
@@ -22,7 +25,8 @@ function createArray() {
     divsArray[i].style = "width:" + divWidthAsPercentage + "%; height:" + divsHeight[i] + "%;";
   }
 }
-var time = 0; 
+
+
 function transformDiv(div, divHeight) {
   window.setTimeout(() => {
     div.style= "width:" + divWidthAsPercentage + "%; height:" + divHeight + "%;";
@@ -45,5 +49,27 @@ function bubbleSort() {
   }
 }
 
+function selectionSort() {
+  for (let i=0; i < arraySize; i++) {
+    let indexOfSmallest = i;
+    for (let j= i + 1; j < arraySize; j++) {
+      if (divsHeight[j] < divsHeight[indexOfSmallest]) {
+        indexOfSmallest = j;
+      }
+    }
+
+    if (indexOfSmallest !== i) {
+      let temp = divsHeight[i];
+      divsHeight[i] = divsHeight[indexOfSmallest];
+      divsHeight[indexOfSmallest] = temp;
+      transformDiv(divsArray[i], divsHeight[i]);
+      transformDiv(divsArray[indexOfSmallest], divsHeight[indexOfSmallest]);
+    }
+  }
+}
+
+
 generateArrayButton.addEventListener("click", createArray);
 runButton.addEventListener("click", bubbleSort);
+runSelectionSort.addEventListener("click", selectionSort);
+runQuickSort.addEventListener("click", quickSortCaller);
