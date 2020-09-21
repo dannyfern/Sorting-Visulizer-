@@ -22,11 +22,13 @@ function createArray() {
     divsArray[i].style = "width:" + divWidthAsPercentage + "%; height:" + divsHeight[i] + "%;";
   }
 }
-
+var time = 0; 
 function transformDiv(div, divHeight) {
   window.setTimeout(() => {
     div.style= "width:" + divWidthAsPercentage + "%; height:" + divHeight + "%;";
-  }, 1000)
+  }, time+=25)
+  
+
 }
 
 function bubbleSort() {
