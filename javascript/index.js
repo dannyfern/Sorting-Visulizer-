@@ -1,11 +1,14 @@
 var divsArray = [],
     divsHeight = [],
-    runButton1 = document.getElementById("selSort"),
-    runButton = document.getElementById("start"),
+    runButton = document.getElementById("bubble-sort"),
+    runSelectionSort = document.getElementById("selection-sort"),
+    runQuickSort = document.getElementById("quick-sort"),
+    runInsertionSort = document.getElementById("insertion-sort"),
     generateArrayButton = document.getElementById("array-gen"),
     algoContainer = document.getElementById("algo-container"),
     arraySize = 50,
-    divWidthAsPercentage = 100 / arraySize;
+    divWidthAsPercentage = 100 / arraySize,
+    time = 0;
 
 
 
@@ -23,7 +26,8 @@ function createArray() {
     divsArray[i].style = "width:" + divWidthAsPercentage + "%; height:" + divsHeight[i] + "%;";
   }
 }
-var time = 0; 
+
+
 function transformDiv(div, divHeight) {
   window.setTimeout(() => {
     div.style= "width:" + divWidthAsPercentage + "%; height:" + divHeight + "%;";
@@ -65,10 +69,8 @@ function selectionSort() {
 }
 
 
-
 generateArrayButton.addEventListener("click", createArray);
 runButton.addEventListener("click", bubbleSort);
-runButton1.addEventListener("click", selectionSort);
-
-
-
+runSelectionSort.addEventListener("click", selectionSort);
+runQuickSort.addEventListener("click", quickSortCaller);
+runInsertionSort.addEventListener("click", insertionSort);
