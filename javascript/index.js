@@ -1,8 +1,9 @@
 var divsArray = [],
     divsHeight = [],
-    runButton = document.getElementById("start"),
+    runButton = document.getElementById("bubble-sort"),
     runSelectionSort = document.getElementById("selection-sort"),
     runQuickSort = document.getElementById("quick-sort"),
+    runInsertionSort = document.getElementById("insertion-sort"),
     generateArrayButton = document.getElementById("array-gen"),
     algoContainer = document.getElementById("algo-container"),
     arraySize = 50,
@@ -73,3 +74,4 @@ generateArrayButton.addEventListener("click", createArray);
 runButton.addEventListener("click", bubbleSort);
 runSelectionSort.addEventListener("click", selectionSort);
 runQuickSort.addEventListener("click", quickSortCaller);
+runInsertionSort.addEventListener("click", insertionSort);
