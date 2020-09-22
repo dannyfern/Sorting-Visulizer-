@@ -1,20 +1,17 @@
 function selectionSort() {
-  for (let i=0; i < arraySize; i++) {
-    let indexOfSmallest = i;
-    for (let j= i + 1; j < arraySize; j++) {
-      if (divsHeight[j] < divsHeight[indexOfSmallest]) {
-        indexOfSmallest = j;
+  for (let i = 0; i < arraySize; i++) {
+    let min = i;
+    for (let j = i + 1; j < arraySize; j++) {
+      if (divsHeight[j] < divsHeight[min]) {
+        min = j;
       }
     }
-
-    if (indexOfSmallest !== i) {
+    if (min !== i) {
       let temp = divsHeight[i];
-      divsHeight[i] = divsHeight[indexOfSmallest];
-      divsHeight[indexOfSmallest] = temp;
-      
+      divsHeight[i] = divsHeight[min];
+      divsHeight[min] = temp;
+      transformDiv(divsArray[i], divsHeight[i]);
+      transformDiv(divsArray[min], divsHeight[min]);
     }
   }
-  console.log(array);
 }
-let inputArr = [5, 2, 4, 6, 1, 3, 20, 18 , 19, 40 , 20 , 3, 5, 7, 16 , 19, 22, 22, 30, 40,19, 17, 5, 3, 7, 1, 9];
-selectionSort(inputArr)
