@@ -42,7 +42,6 @@ function transformDiv(div, divHeight) {
 }
 
 
-
 generateArrayButton.addEventListener("click", createArray);
 runButton.addEventListener("click", bubbleSort);
 runSelectionSort.addEventListener("click", selectionSort);
