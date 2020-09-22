@@ -56,10 +56,21 @@ function explainerDiv(divId) {
   }
 }
 function startAlgorithm() {
-  console.log("hello")
+
   div = explainerContainer.children[0];
-  if (div.id == "bubble-sort-explainer") {
-    bubbleSort();
+  switch (div.id) {
+    case "bubble-sort-explainer":
+      bubbleSort()
+      break;
+    case "selection-sort-explainer":
+      selectionSort()
+      break;
+    case "quick-sort-explainer":
+      quickSortCaller()
+      break;
+    case "insertion-sort-explainer":
+      insertionSort()
+      break;
   }
 }
 
