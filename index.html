@@ -9,31 +9,37 @@
     <link rel="stylesheet" href="./css/style.css" href="https://bootswatch.com/a/yeti/bootstrap.min.css">
   </head>
   <body>
-    <div class ="container mt-4">
+    <div class ="container mt-4" id="algobox">
     <h1 class="Display-4">
     <i class="fas fa-ruler-combined"></i> My<span class="text-primary">Algorithm</span>Visaulizer</h1>
     </div>
-<<<<<<< HEAD
     <div id = "buttons">
-    <button id="insSort">Insertion Sort</button>
-    <button id ="selSort">Selection Sort</button>
-    <button id="start">Run algo</button>
-=======
     <button id="bubble-sort">Run BubbleSort</button>
     <button id="selection-sort">Run selectionSort</button>
     <button id="quick-sort">Run quickSort</button>
     <button id="insertion-sort">Run insertionSort</button>
->>>>>>> 33a2d5654fbc38a6a19a7a683237dd084b5d4d35
     <button id="array-gen">Generate array</button>
     <div id="algo-container">
     </div>
 
-    </div>
+    <script>
+      $(window).scroll(function() {
+          if ($(document).scrollTop() > 50) {
+              $('.nav').addClass('affix');
+              console.log("OK");
+          } else {
+              $('.nav').removeClass('affix');
+          }
+      });
+  </script>
+    <script src="./javascript/bubbleSort.js"></script>
+    <script src="./javascript/selectionSort.js"></script>
     <script src="./javascript/insertionSort.js"></script>
     <script src="./javascript/quickSort.js"></script>
     <script src="./javascript/index.js"></script>
-    
-    
-    <!-- <script src="./bubbleSort.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
