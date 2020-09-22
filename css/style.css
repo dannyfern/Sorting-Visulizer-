@@ -4,13 +4,12 @@
   margin-left: 20vw;
   height: 50vh;
   width: 60vw;
-  background-color: lightblue;
   flex-direction: row;
   top: 30px;
 }
 
 .divBar {
-  background-color: black;
+  background-color: #F33B3B;
   margin-left: 1px;
 }
 
