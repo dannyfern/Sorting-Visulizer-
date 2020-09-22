@@ -26,18 +26,26 @@ function createArray() {
     divsArray[i].style = "width:" + divWidthAsPercentage + "%; height:" + divsHeight[i] + "%;";
   }
 }
+var time = 0; 
+var count = 0;
 
 
 function transformDiv(div, divHeight) {
+  count++
   window.setTimeout(() => {
+    console.log(div)
+    console.log(count)
     div.style= "width:" + divWidthAsPercentage + "%; height:" + divHeight + "%;";
   }, time+=25)
   
 
 }
 
+
 generateArrayButton.addEventListener("click", createArray);
 runButton.addEventListener("click", bubbleSort);
 runSelectionSort.addEventListener("click", selectionSort);
 runQuickSort.addEventListener("click", quickSortCaller);
 runInsertionSort.addEventListener("click", insertionSort);
+
+
