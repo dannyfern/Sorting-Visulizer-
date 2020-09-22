@@ -4,7 +4,6 @@
   margin-left: 20vw;
   height: 50vh;
   width: 60vw;
-  background-color: rgb(255, 255, 255);
   flex-direction: row;
   top: 30px;
   background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
@@ -16,7 +15,7 @@
 }
 
 .divBar {
-  background-color: black;
+  background-color: #F33B3B;
   margin-left: 1px;
 }
 

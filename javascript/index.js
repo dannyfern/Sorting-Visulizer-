@@ -1,19 +1,22 @@
 var divsArray = [],
     divsHeight = [],
-    runButton = document.getElementById("bubble-sort"),
-    runSelectionSort = document.getElementById("selection-sort"),
-    runQuickSort = document.getElementById("quick-sort"),
-    runInsertionSort = document.getElementById("insertion-sort"),
+    BubbleSort = document.getElementById("bubble-sort"),
+    SelectionSort = document.getElementById("selection-sort"),
+    QuickSort = document.getElementById("quick-sort"),
+    InsertionSort = document.getElementById("insertion-sort"),
+    runAlgorithm = document.getElementById("run-algorithm"),
     generateArrayButton = document.getElementById("array-gen"),
     algoContainer = document.getElementById("algo-container"),
+    explainerContainer = document.getElementById("explainer-container"),
     arraySize = 50,
     divWidthAsPercentage = 100 / arraySize,
-    time = 0;
+    time = 0,
+    algorithm;
 
 
 
 function createArray() {
-  time = 0; 
+  time =0;
   // clear the container of any divs currently in it;
   algoContainer.innerHTML="";
   // Enter for loop that creates all the divs for the array, and there corresponding sizes:
@@ -35,15 +38,37 @@ function transformDiv(div, divHeight) {
   window.setTimeout(() => {
     div.style= "width:" + divWidthAsPercentage + "%; height:" + divHeight + "%;";
   }, time+=25)
-  
 
 }
 
+
+function explainerDiv(divId) {
+  explainerContainer.innerHTML="";
+  let divExplainer = document.createElement("div");
+  divExplainer.id = divId;
+  explainerContainer.appendChild(divExplainer);
+  if (divId == "bubble-sort-explainer") {
+    divExplainer.innerHTML="this is the message i want for bubble sort";
+  } else if (divId == "selection-sort-explainer") {
+    divExplainer.innerHTML="this is the message i want for selection sort";
+  } else {
+    divExplainer.innerHTML="not yet linked";
+  }
+}
+function startAlgorithm() {
+  console.log("hello")
+  div = explainerContainer.children[0];
+  if (div.id == "bubble-sort-explainer") {
+    bubbleSort();
+  }
+}
+
 generateArrayButton.addEventListener("click", createArray);
-runButton.addEventListener("click", bubbleSort);
-runSelectionSort.addEventListener("click", selectionSort);
-runQuickSort.addEventListener("click", quickSortCaller);
-runInsertionSort.addEventListener("click", insertionSort);
+runAlgorithm.addEventListener("click", startAlgorithm);
+BubbleSort.addEventListener("click", () => {explainerDiv("bubble-sort-explainer")});
+SelectionSort.addEventListener("click", () => {explainerDiv("selection-sort-explainer")});
+QuickSort.addEventListener("click", () => {explainerDiv("quick-sort-explainer")});
+InsertionSort.addEventListener("click", () => {explainerDiv("insertion-sort-explainer")});
 
 
 
