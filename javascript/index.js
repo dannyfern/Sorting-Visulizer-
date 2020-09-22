@@ -47,13 +47,29 @@ function explainerDiv(divId) {
   let divExplainer = document.createElement("div");
   divExplainer.id = divId;
   explainerContainer.appendChild(divExplainer);
-  if (divId == "bubble-sort-explainer") {
-    divExplainer.innerHTML="this is the message i want for bubble sort";
-  } else if (divId == "selection-sort-explainer") {
-    divExplainer.innerHTML="this is the message i want for selection sort";
-  } else {
-    divExplainer.innerHTML="not yet linked";
+  switch (divId) {
+    case "bubble-sort-explainer":
+      $.get('bubbleSort.html',function(response){ 
+        $('#bubble-sort-explainer').html(response); 
+       })
+      break;
+    case "selection-sort-explainer":
+      $.get('selectionSort.html',function(response){ 
+        $('#selection-sort-explainer').html(response); 
+       })
+      break;
+    case "quick-sort-explainer":
+      $.get('quickSort.html',function(response){ 
+        $('#quick-sort-explainer').html(response); 
+       })
+      break;
+    case "insertion-sort-explainer":
+      $.get('insertionSort.html',function(response){ 
+        $('#insertion-sort-explainer').html(response); 
+       })
+      break;
   }
+
 }
 function startAlgorithm() {
 
