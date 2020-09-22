@@ -14,8 +14,6 @@ function selectionSort() {
       transformDiv(divsArray[min], divsHeight[min]);
     }
   }
-
 }
-
 
 

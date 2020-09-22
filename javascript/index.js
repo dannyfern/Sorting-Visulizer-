@@ -35,10 +35,7 @@ var count = 0;
 
 
 function transformDiv(div, divHeight) {
-  count++
   window.setTimeout(() => {
-    console.log(div)
-    console.log(count)
     div.style= "width:" + divWidthAsPercentage + "%; height:" + divHeight + "%;";
   }, time+=25)
 
@@ -72,5 +69,9 @@ BubbleSort.addEventListener("click", () => {explainerDiv("bubble-sort-explainer"
 SelectionSort.addEventListener("click", () => {explainerDiv("selection-sort-explainer")});
 QuickSort.addEventListener("click", () => {explainerDiv("quick-sort-explainer")});
 InsertionSort.addEventListener("click", () => {explainerDiv("insertion-sort-explainer")});
+
+
+
+
 
 
