@@ -13,6 +13,7 @@ var divsArray = [],
 
 
 function createArray() {
+  time = 0; 
   // clear the container of any divs currently in it;
   algoContainer.innerHTML="";
   // Enter for loop that creates all the divs for the array, and there corresponding sizes:
@@ -31,16 +32,12 @@ var count = 0;
 
 
 function transformDiv(div, divHeight) {
-  count++
   window.setTimeout(() => {
-    console.log(div)
-    console.log(count)
     div.style= "width:" + divWidthAsPercentage + "%; height:" + divHeight + "%;";
   }, time+=25)
   
 
 }
-
 
 generateArrayButton.addEventListener("click", createArray);
 runButton.addEventListener("click", bubbleSort);
