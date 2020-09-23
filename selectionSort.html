@@ -1,0 +1,33 @@
+<div>
+  <h3>Selection Sort</h3>
+  <p>
+    The selection sort algorithm sorts an array by finding the smallest element from the unsorted portion of the array,
+    and placing it at the end of the sorted section of the array. The algorithm uses two sub arrays within the given array.
+    The worst case time complexity of selection sort is O(n^2), it is not effective for large data sets.
+  </p>
+  <ul>
+    <li>The sub array maintained at the start of the array is sorted from arr[0] to arr[i]</li>
+    <li>The other elements in the array are unsorted, elements arr[i +1] through arr[arr.length -1]</li>
+  </ul>
+  <p>
+    Each time the algorithm iterates through the unordered sub array, finding the smallest element and placing it
+    at the end on the sorted sub array.
+  </p>
+  <div>
+    function selectionSort() {<br>
+      for (let i = 0; i < arraySize; i++) {<br>
+        let min = i;<br>
+        for (let j = i + 1; j < arraySize; j++) {<br>
+          if (divsHeight[j] < divsHeight[min]) {<br>
+            min = j;<br>
+          }<br>
+        }<br>
+        if (min !== i) {<br>
+          let temp = divsHeight[i];<br>
+          divsHeight[i] = divsHeight[min];<br>
+          divsHeight[min] = temp;<br>
+        }<br>
+      }
+    }
+  </div>
+</div>
