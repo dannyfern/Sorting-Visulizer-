@@ -13,48 +13,6 @@
     We then recursively call the quicksort function to perform this task on the two sub arrays we have just formed, and so on. The effect of
     which is that the algorithm will only stop once all elements are sorted in the final array. 
   </p>
-  <div>
-    // function called to swap an elements from either side of the current pivot index. <br>
-    function swap(items, leftIndex, rightIndex){<br>
-      var temp = items[leftIndex];<br>
-      items[leftIndex] = items[rightIndex];<br>
-      items[rightIndex] = temp;<br>
-    }
-    //Partition function used to divide sub array and compare elements on either side of pivot to the pivot itself <br>
-    function partition(items, left, right) {<br>
-      // establish a pivot value (center index of sub array)<br>
-      var pivot   = items[Math.floor((right + left) / 2)], //middle element<br>
-          i       = left, //left pointer<br>
-          j       = right; //right pointer<br>
-      while (i <= j) {<br>
-          while (items[i] < pivot) {<br>
-              i++;<br>
-          }<br>
-          while (items[j] > pivot) {<br>
-              j--;<br>
-          }<br>
-          if (i <= j) {<br>
-              swap(items, i, j); //sawpping two elements<br>
-              i++;<br>
-              j--;<br>
-          }<br>
-      }<br>
-      // returns index of i to be used in the next recursive call of quicksort function<br>
-      return i;<br>
-    }<br>
-    // recursive function called to sort the array <br>
-    function quickSort(items, left, right) {<br>
-      var index;<br>
-      if (items.length > 1) {<br>
-          index = partition(items, left, right); //index returned from partition<br>
-          if (left < index - 1) { //more elements on the left side of the pivot<br>
-              quickSort(items, left, index - 1);<br>
-          }<br>
-          if (index < right) { //more elements on the right side of the pivot<br>
-              quickSort(items, index, right);<br>
-          }<br>
-      }<br>
-      return items;<br>
-    }<br>
+  <img src="./img/quick.JPG" alt="quickimg">
   </div>
 </div>
