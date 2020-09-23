@@ -50,3 +50,23 @@
   margin-top: 50px;
 }
 
+.algotext {
+  color: #7FDBFF;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 30px;
+  padding-bottom: 70px;
+}
+
+#run-algorithm {
+  display: relative;
+  width: 60%;
+  border: none;
+  background-color: #b946a6;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-left: 20vw;
+  
+
+}

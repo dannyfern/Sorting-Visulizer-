@@ -1,0 +1,40 @@
+<div class="algotext">
+    <h3 style="text-decoration: underline;">Insertion Sort Algoirithm</h3>
+    <p>
+      Insertion sort is an algorithm which can be identified by its two nested loops. Insertion sorting algorithms represent 
+      qaudratic sequences when sorting a collection of items and can be represented by O(*n*2*) in Big O Notation. The problem
+      with qaudratic solutions is the relationship between nested loops and increasing time exponentially depending on the input
+      size. 
+    </p>
+    <p>
+      Insertion sorting works by looping through items and inherently finding the head 
+      (smallest number of the sequence),
+      and inserting that into the front of the sequence. From there, every number is copied and put one index ahead to
+      make way for the next smaller number to be inserted into the sequence. This loops until the sequence has been ordered
+      in sequence from smallest to largest. 
+    </p>
+    
+  
+    
+    <p>
+        function insertionSort (items) {
+            <br> (var i = 0; i < items.length; i++) { </br>
+               let value = items[i] 
+              <br>// store the current item value so it can be placed right<br>
+              for (var j = i - 1; j > -1 && items[j] > value; j--) {
+               <br> // loop through the items in the sorted array (the items from the current to the beginning)<br>
+                // copy each item to the next one
+                items[j + 1] = items[j]
+              }
+             <br> // the last item we've reached should now hold the value of the currently sorted item<br>
+              items[j + 1] = value
+            }
+          
+            return list
+          }
+          
+          const list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+          console.log(insertionSort(list)) // [ 17, 20, 26, 31, 44, 54, 55, 77, 93 ]
+          
+    </p>
+  </div>
