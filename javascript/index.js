@@ -8,7 +8,7 @@ var divsArray = [],
     generateArrayButton = document.getElementById("array-gen"),
     algoContainer = document.getElementById("algo-container"),
     explainerContainer = document.getElementById("explainer-container"),
-    arraySize = 50,
+    arraySize = 150,
     divWidthAsPercentage = 100 / arraySize,
     time = 0,
     algorithm;
